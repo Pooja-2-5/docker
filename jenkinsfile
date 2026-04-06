@@ -1,0 +1,29 @@
+pipeline{
+  agent any
+  stages{
+    stage('1.checkout'){
+      steps{
+        git url:'https://github.com/Pooja-2-5/docker',branch:'main'
+          }
+        }
+
+stage('2.Build Image'){
+  steps{
+    bat 'docker build -t Mywebsite.'
+    }
+  }
+
+stage('3.Stop/Remove old Containers'){
+  steps{
+bat 'dockers stop mycont || exit 0'
+bat 'docker rm mycont || exit 0'
+}
+}
+
+stage('Run the Image-Containerize'){
+  steps{
+    bat 'docker run -d -p 5000:0 --name mycont Mywebsite'
+}
+}
+}
+}
