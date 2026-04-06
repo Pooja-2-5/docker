@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('1.checkout'){
       steps{
-        git url:'https://github.com/Pooja-2-5/docker',branch:'main'
+        git url:'https://github.com/Pooja-2-5/docker.git',branch:'main'
           }
         }
 
