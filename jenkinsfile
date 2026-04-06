@@ -22,7 +22,7 @@ bat 'docker rm mycont || exit 0'
 
 stage('Run the Image-Containerize'){
   steps{
-    bat 'docker run -d -p 5000:0 --name mycont Mywebsite'
+    bat 'docker run -d -p 5000:0 --name mycont mywebsite'
 }
 }
 }
